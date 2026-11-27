@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "acciones": [
+    {"id": "convertir", "nombre": "Convertir documento a Markdown", "tipo": "convertir"},
+    {"id": "tokens", "nombre": "Contar tokens de un documento", "tipo": "tokens"},
+    {"id": "almacenamiento", "nombre": "Analizar espacio de una carpeta", "tipo": "almacenamiento"},
+    {"id": "resumir", "nombre": "Resumir documento con IA", "tipo": "ia", "instruccion": "Resume el documento en español, sin inventar datos."},
+    {"id": "preguntas", "nombre": "Crear preguntas de estudio con IA", "tipo": "ia", "instruccion": "Crea preguntas de estudio en español basadas únicamente en el documento."}
+  ]
+}

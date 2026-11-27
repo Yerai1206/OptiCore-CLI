@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "opticore-cli"
+version = "0.1.0"
+description = "Diagnóstico local y herramientas seguras para Windows"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = ["typer>=0.15,<1", "textual>=1,<9", "rich>=13.9,<15", "psutil>=6,<8", "pypdf>=5,<7", "python-docx>=1.1,<2", "tiktoken>=0.9,<1"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10", "pytest-asyncio>=0.25,<2"]
+build = ["pyinstaller>=6,<7"]
+
+[project.scripts]
+opticore = "opticore.main:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+opticore = ["assets/tokens/*", "acciones.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"

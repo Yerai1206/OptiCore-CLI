@@ -1,0 +1,12 @@
+name: Pruebas
+on: [push, pull_request]
+jobs:
+  pytest:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -e ".[dev]"
+      - run: python -m pytest -q tests/test_acciones_config.py tests/test_limpieza_facil.py tests/test_proveedor_ia.py tests/test_mensajes_limpieza.py
